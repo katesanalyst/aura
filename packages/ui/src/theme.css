@@ -1,0 +1,299 @@
+/* Aura UI Design System - Theme Variables */
+
+:root {
+  /* Light theme (default) */
+  --aura-bg: #f8fafc;
+  --aura-bg-elevated: #ffffff;
+  --aura-bg-subtle: #f1f5f9;
+  --aura-surface: #ffffff;
+  --aura-surface-subtle: #f8fafc;
+  --aura-surface-glass: rgba(255, 255, 255, 0.7);
+
+  --aura-fg: #0f172a;
+  --aura-fg-muted: #64748b;
+  --aura-fg-muted-strong: #475569;
+  --aura-fg-muted-soft: #94a3b8;
+
+  --aura-border: rgba(0, 0, 0, 0.06);
+  --aura-border-strong: rgba(0, 0, 0, 0.1);
+
+  --aura-accent: #3b82f6;
+  --aura-accent-hover: #2563eb;
+  --aura-accent-light: rgba(59, 130, 246, 0.08);
+  --aura-accent-fg: #ffffff;
+
+  --aura-success: #10b981;
+  --aura-success-light: rgba(16, 185, 129, 0.08);
+  --aura-success-fg: #ffffff;
+
+  --aura-warning: #f59e0b;
+  --aura-warning-light: rgba(245, 158, 11, 0.08);
+  --aura-warning-fg: #ffffff;
+
+  --aura-danger: #ef4444;
+  --aura-danger-light: rgba(239, 68, 68, 0.08);
+  --aura-danger-fg: #ffffff;
+
+  --aura-info: #06b6d4;
+  --aura-info-light: rgba(6, 182, 212, 0.08);
+  --aura-info-fg: #ffffff;
+
+  --aura-radius-sm: 8px;
+  --aura-radius-md: 10px;
+  --aura-radius-lg: 14px;
+  --aura-radius-xl: 18px;
+  --aura-radius-full: 9999px;
+
+  --aura-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --aura-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --aura-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --aura-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.1);
+  --aura-shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+
+  --aura-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --aura-font-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --aura-bg: #0a0a0f;
+  --aura-bg-elevated: #111118;
+  --aura-bg-subtle: #16161f;
+  --aura-surface: rgba(22, 22, 31, 0.8);
+  --aura-surface-subtle: rgba(30, 30, 42, 0.6);
+  --aura-surface-glass: rgba(22, 22, 31, 0.6);
+
+  --aura-fg: #f1f5f9;
+  --aura-fg-muted: #94a3b8;
+  --aura-fg-muted-strong: #cbd5e1;
+  --aura-fg-muted-soft: #64748b;
+
+  --aura-border: rgba(255, 255, 255, 0.06);
+  --aura-border-strong: rgba(255, 255, 255, 0.1);
+
+  --aura-accent: #60a5fa;
+  --aura-accent-hover: #3b82f6;
+  --aura-accent-light: rgba(96, 165, 250, 0.1);
+  --aura-accent-fg: #ffffff;
+
+  --aura-success: #34d399;
+  --aura-success-light: rgba(52, 211, 153, 0.1);
+  --aura-success-fg: #ffffff;
+
+  --aura-warning: #fbbf24;
+  --aura-warning-light: rgba(251, 191, 36, 0.1);
+  --aura-warning-fg: #ffffff;
+
+  --aura-danger: #f87171;
+  --aura-danger-light: rgba(248, 113, 113, 0.1);
+  --aura-danger-fg: #ffffff;
+
+  --aura-info: #22d3ee;
+  --aura-info-light: rgba(34, 211, 238, 0.1);
+  --aura-info-fg: #ffffff;
+
+  --aura-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --aura-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --aura-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --aura-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --aura-shadow-glow: 0 0 30px rgba(96, 165, 250, 0.2);
+}
+
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--aura-font-sans);
+  background: var(--aura-bg);
+  color: var(--aura-fg);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--aura-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--aura-accent);
+  outline-offset: 2px;
+  border-radius: var(--aura-radius-sm);
+}
+
+/* Selection */
+::selection {
+  background: var(--aura-accent-light);
+  color: var(--aura-accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--aura-border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aura-fg-muted-soft);
+}
+
+/* Responsive breakpoints */
+/* sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px */
+
+/* Safe area for mobile (notch/home indicator) */
+@supports (padding: env(safe-area-inset-top)) {
+  .safe-area-top { padding-top: env(safe-area-inset-top); }
+  .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .safe-area-left { padding-left: env(safe-area-inset-left); }
+  .safe-area-right { padding-right: env(safe-area-inset-right); }
+}
+
+/* Responsive utilities */
+@media (max-width: 639px) {
+  .hide-mobile { display: none !important; }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .hide-sm { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-md { display: none !important; }
+}
+@media (min-width: 1024px) {
+  .hide-lg { display: none !important; }
+}
+@media (max-width: 767px) {
+  .show-mobile { display: block !important; }
+}
+@media (min-width: 768px) {
+  .show-mobile { display: none !important; }
+}
+
+/* Touch-friendly sizing */
+@media (hover: none) and (pointer: coarse) {
+  :root {
+    --aura-touch-min: 44px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Party badge colors (IYIpolitics) */
+.badge-tvk { background: #f97316; color: #fff; }
+.badge-dmk { background: #ef4444; color: #fff; }
+.badge-admk { background: #22c55e; color: #fff; }
+.badge-dinamalar { background: #3b82f6; color: #fff; }
+.badge-puducherry { background: #a855f7; color: #fff; }
+.badge-congress { background: #dc2626; color: #fff; }
+.badge-bjp { background: #f97316; color: #fff; }
+
+/* Pulse animation for live data */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--aura-success);
+}
+
+/* Glass card with blur */
+.glass-card {
+  background: var(--aura-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--aura-border);
+}
+
+/* Horizontal tabs (IYIpolitics style) */
+.tabs-h {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--aura-border);
+}
+.tabs-h-button {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--aura-fg-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.tabs-h-button-active {
+  color: var(--aura-accent);
+  border-bottom-color: var(--aura-accent);
+}
+
+/* Scrollable tabs on mobile */
+@media (max-width: 767px) {
+  .tabs-h {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Hero stat sizing (8 cols on desktop) */
+@media (min-width: 1536px) {
+  .hero-grid { grid-template-columns: repeat(8, 1fr) !important; }
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .hero-grid { grid-template-columns: repeat(6, 1fr) !important; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 767px) {
+  .hero-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Sentiment bars */
+.sentiment-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--aura-bg-subtle);
+}
+.sentiment-positive { background: var(--aura-success); }
+.sentiment-neutral { background: var(--aura-warning); }
+.sentiment-negative { background: var(--aura-danger); }

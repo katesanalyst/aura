@@ -1,0 +1,74 @@
+/* Template-specific overrides */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--aura-accent);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--aura-accent-light);
+  color: var(--aura-accent);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--aura-border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aura-fg-muted-soft);
+}
+
+/* Responsive grid helpers */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 12px !important;
+    margin-left: 0 !important;
+  }
+
+  .grid-3-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-1-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .dashboard-charts {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Chart responsive wrapper */
+.chart-responsive {
+  width: 100%;
+  height: 200px;
+}
