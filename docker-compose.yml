@@ -1,0 +1,14 @@
+services:
+  aura-ui:
+    build: .
+    ports:
+      - "1015:1015"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - aura-net
+
+networks:
+  aura-net:
+    driver: bridge

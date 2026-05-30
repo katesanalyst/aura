@@ -1,54 +1,34 @@
 /* Template-specific overrides */
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Chart responsive */
+.chart-responsive { width: 100%; height: 200px; }
+
+/* Hero stats responsive grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
 }
 
-/* Focus styles */
-:focus-visible {
-  outline: 2px solid var(--aura-accent);
-  outline-offset: 2px;
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .dashboard-charts {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-/* Selection color */
-::selection {
-  background: var(--aura-accent-light);
-  color: var(--aura-accent);
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--aura-border-strong);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--aura-fg-muted-soft);
-}
-
-/* Responsive grid helpers */
+/* Mobile */
 @media (max-width: 768px) {
   .main-content {
-    padding: 12px !important;
     margin-left: 0 !important;
-  }
-
-  .grid-3-1 {
-    grid-template-columns: 1fr !important;
-  }
-
-  .grid-1-1 {
-    grid-template-columns: 1fr !important;
+    padding: 12px !important;
+    padding-top: 68px !important;
+    width: 100% !important;
   }
 
   .dashboard-stats {
@@ -59,16 +39,28 @@ html {
   .dashboard-charts {
     grid-template-columns: 1fr !important;
   }
+
+  section h2 {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .dashboard-stats {
     grid-template-columns: 1fr !important;
   }
-}
 
-/* Chart responsive wrapper */
-.chart-responsive {
-  width: 100%;
-  height: 200px;
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .main-content {
+    padding: 8px !important;
+  }
 }
